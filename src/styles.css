@@ -1984,28 +1984,6 @@ button, input, textarea {
   color: var(--text-muted);
 }
 
-.project-links {
-  display: flex;
-  gap: 24px;
-  margin-top: 28px;
-}
-
-.project-links a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  font-weight: 600;
-  border-bottom: 1px solid #52525b;
-  padding-bottom: 4px;
-  transition: 0.2s;
-}
-
-.project-links a:hover {
-  color: var(--cyan-bright);
-  border-color: var(--cyan-bright);
-}
-
 /* CONTACT SECTION */
 .contact {
   display: grid;
@@ -2605,5 +2583,181 @@ footer > a:last-child:hover {
   .bg-logo-float {
     padding: 8px;
     scale: 0.7;
+  }
+}
+
+/* ===== RESPONSIVE POLISH (tablet & phone) ===== */
+.hero {
+  /* keep the decorative glows from creating sideways scroll */
+  overflow-x: clip;
+}
+
+/* let grid columns shrink below their content width on narrow screens */
+.hero > *,
+.about-grid > *,
+.project > *,
+.contact > * {
+  min-width: 0;
+}
+
+.code-window pre {
+  overflow-x: auto;
+}
+
+@media (max-width: 1024px) {
+  .section {
+    padding: 96px 24px;
+  }
+
+  .nav {
+    gap: 2px;
+  }
+
+  .nav-link-item {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (max-width: 900px) {
+  .header-cta {
+    display: none;
+  }
+
+  .contact-trigger-btn {
+    width: 38px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .contact-trigger-btn > span:not(.contact-trigger-icon),
+  .contact-trigger-btn > svg:last-child {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 72px 20px;
+  }
+
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .section h2 {
+    font-size: clamp(30px, 8.5vw, 40px);
+  }
+
+  .section-detail {
+    max-width: none;
+  }
+
+  /* compact header actions: no chevron on the language button */
+  .header-actions {
+    gap: 8px;
+  }
+
+  .lang-trigger-btn > svg:last-child {
+    display: none;
+  }
+
+  .lang-trigger-btn {
+    padding: 0 10px;
+  }
+
+  .contact-dropdown-menu,
+  .lang-dropdown-menu {
+    max-width: calc(100vw - 32px);
+  }
+
+  .hero-glow {
+    display: none;
+  }
+
+  .quick-badges {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .orbit.one {
+    right: 8px;
+  }
+
+  .orbit.two {
+    left: 8px;
+  }
+
+  .highlights article {
+    grid-template-columns: 30px 1fr auto;
+    gap: 12px;
+    padding: 20px 0;
+  }
+
+  .skill-card {
+    min-height: 0;
+  }
+
+  .skill-card h3 {
+    margin-bottom: 20px;
+  }
+
+  .project {
+    gap: 28px;
+  }
+
+  .contact-row {
+    padding: 14px 16px;
+  }
+
+  .contact-row strong {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 400px) {
+  .brand-text {
+    font-size: 15px;
+  }
+
+  .site-header,
+  .site-header.scrolled {
+    padding: 0 12px;
+  }
+
+  .header-actions {
+    gap: 6px;
+  }
+
+  .lang-current-code {
+    display: none;
+  }
+
+  .lang-trigger-btn {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .hero-name {
+    font-size: 34px;
+  }
+
+  .code-window pre {
+    font-size: 9px;
+  }
+
+  .contact-form {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 340px) {
+  .brand-text {
+    display: none;
   }
 }

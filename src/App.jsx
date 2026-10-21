@@ -143,9 +143,7 @@ const content = {
           tone: 'cyan',
           badge: 'Web Product'
         }
-      ],
-      liveDemo: 'Live Demo',
-      githubRepo: 'GitHub Repo'
+      ]
     },
     contact: {
       eyebrow: '04 / Get In Touch',
@@ -264,9 +262,7 @@ const content = {
           tone: 'cyan',
           badge: 'Web Product'
         }
-      ],
-      liveDemo: 'ដំណើរការសាកល្បង',
-      githubRepo: 'កូដលើ GitHub'
+      ]
     },
     contact: {
       eyebrow: '០៤ / ទំនាក់ទំនង',
@@ -292,7 +288,7 @@ const content = {
       errMsg: 'សូមសរសេរសារយ៉ាងតិច ១០ តួអក្សរ។'
     },
     footer: {
-      copy: 'រក្សាសិទ្ធិគ្រប់យ៉ាង © ២០២៦ Korn Koemlong (គន់ គឺមឡុង)។ បង្កើតឡើងដោយក្តីស្រឡាញ់។',
+      copy: 'រក្សាសិទ្ធិគ្រប់យ៉ាង © ២០២៦ Korn Koemlong (គន់ គឹមឡុង)។ បង្កើតឡើងដោយក្តីស្រឡាញ់។',
       backToTop: 'ត្រឡប់ទៅខាងលើ ↑'
     }
   }
@@ -346,7 +342,7 @@ function Header({ lang, setLang, onPhotoClick }) {
           <span className="photo-zoom-hint">🔍</span>
         </button>
         <a href="#home" className="brand-text">
-          {lang === 'km' ? 'គន់ គឺមឡុង' : 'Korn Koemlong'}<span>.</span>
+          {lang === 'km' ? 'គន់ គឹមឡុង' : 'Korn Koemlong'}<span>.</span>
         </a>
       </div>
 
@@ -789,7 +785,7 @@ export default function App() {
             <h1 className="hero-name">
               {t.hero.greeting}{' '}
               <span className="highlight-name">
-                {lang === 'km' ? 'គន់ គឺមឡុង' : 'Korn Koemlong'}
+                {lang === 'km' ? 'គន់ គឹមឡុង' : 'Korn Koemlong'}
               </span>
             </h1>
             <p className="alias">(Journey)</p>
@@ -847,7 +843,7 @@ export default function App() {
                 <div className="profile-summary">
                   <div className="profile-title-row">
                     <h3 className="profile-name">
-                      {lang === 'km' ? 'គន់ គឺមឡុង' : 'Korn Koemlong'}
+                      {lang === 'km' ? 'គន់ គឹមឡុង' : 'Korn Koemlong'}
                     </h3>
                     <span className="profile-role-tag">{t.hero.roleBadge}</span>
                   </div>
@@ -906,7 +902,7 @@ export default function App() {
                 />
                 <div>
                   <h3 className="about-name-title">
-                    {lang === 'km' ? 'គន់ គឺមឡុង (Journey)' : 'Korn Koemlong (Journey)'}
+                    {lang === 'km' ? 'គន់ គឹមឡុង (Journey)' : 'Korn Koemlong (Journey)'}
                   </h3>
                   <p className="about-role-sub">{t.about.authorRole}</p>
                 </div>
@@ -1096,10 +1092,6 @@ export default function App() {
                       </span>
                     ))}
                   </div>
-                  <div className="project-links">
-                    <a href="#" onClick={e => e.preventDefault()}>{t.projects.liveDemo} <Icon name="arrowUpRight" size={17}/></a>
-                    <a href="#" onClick={e => e.preventDefault()}>{t.projects.githubRepo} <Icon name="github" size={17}/></a>
-                  </div>
                 </div>
               </article>
             ))}
@@ -1226,7 +1218,7 @@ export default function App() {
               <img src="/profile.jpg" alt="Korn Koemlong" className="nav-profile-img footer-avatar" />
             </button>
             <a href="#home" className="brand-text">
-              {lang === 'km' ? 'គន់ គឺមឡុង' : 'Korn Koemlong'}<span>.</span>
+              {lang === 'km' ? 'គន់ គឹមឡុង' : 'Korn Koemlong'}<span>.</span>
             </a>
           </div>
           <span>(Journey)</span>
@@ -1255,12 +1247,12 @@ export default function App() {
               <Icon name="close" size={18} />
             </button>
             <div className="photo-modal-image-wrapper">
-              <img src="/profile.jpg" alt="Korn Koemlong (គន់ គឺមឡុង)" className="photo-modal-img" />
+              <img src="/profile.jpg" alt="Korn Koemlong (គន់ គឹមឡុង)" className="photo-modal-img" />
             </div>
             <div className="photo-modal-footer">
               <div className="modal-dev-info">
                 <h4 className="modal-dev-name">
-                  {lang === 'km' ? 'គន់ គឺមឡុង (Journey)' : 'Korn Koemlong (Journey)'}
+                  {lang === 'km' ? 'គន់ គឹមឡុង (Journey)' : 'Korn Koemlong (Journey)'}
                 </h4>
                 <p className="modal-dev-alias">{lang === 'km' ? 'និស្សិតឆ្នាំទី ៤ · Software Developer' : '@journey · Software Developer'}</p>
               </div>
