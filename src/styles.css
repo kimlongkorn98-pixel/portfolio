@@ -2761,3 +2761,190 @@ footer > a:last-child:hover {
     display: none;
   }
 }
+
+/* ===== GLASS SURFACES =====
+   Cards are translucent so the site background (glows, grid, tech logos) shows through. */
+:root {
+  --glass: rgba(20, 20, 26, 0.45);
+  --glass-strong: rgba(16, 16, 22, 0.62);
+  --glass-hover: rgba(30, 30, 38, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-blur: blur(14px) saturate(140%);
+}
+
+.skill-card,
+.meta-box,
+.contact-row,
+.contact-form,
+.project-visual,
+.code-window {
+  background: var(--glass);
+  border-color: var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* keep the coloured corner glow on project previews */
+.project-visual.cyan {
+  background: radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.18), transparent 45%), var(--glass);
+}
+
+.project-visual.violet {
+  background: radial-gradient(circle at 20% 80%, rgba(168, 85, 247, 0.2), transparent 45%), var(--glass);
+}
+
+.skill-card:hover,
+.contact-row:not(.static):hover {
+  background: var(--glass-hover);
+}
+
+.code-window {
+  background: var(--glass-strong);
+}
+
+.window-bar,
+.window-footer {
+  background: rgba(18, 18, 24, 0.5);
+}
+
+.window-hero-profile {
+  background: linear-gradient(180deg, rgba(20, 20, 26, 0.55) 0%, rgba(13, 13, 17, 0.25) 100%);
+}
+
+/* small chips and buttons */
+.tags .tech-skill-pill,
+.skill-icon,
+.row-icon,
+.mini-tag,
+.badge-pill,
+.button.secondary,
+.header-cta,
+.lang-trigger-btn,
+.social-links a,
+.orbit {
+  background: rgba(255, 255, 255, 0.035);
+  border-color: var(--glass-border);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.tags .tech-skill-pill:hover,
+.badge-pill:hover,
+.button.secondary:hover,
+.social-links a:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.orbit {
+  background: rgba(21, 21, 28, 0.7);
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: rgba(9, 9, 12, 0.55);
+}
+
+.highlights article:hover {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+/* ===== SKILL CARD TECH BACKGROUNDS =====
+   Each card gets a faded watermark of its main technologies, a brand-coloured glow and a circuit-dot pattern. */
+.skill-card {
+  isolation: isolate;
+  min-height: 340px;
+}
+
+.skill-card .tags {
+  margin-top: 0;
+}
+
+.skill-card-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 100% 100%, rgba(var(--accent), 0.18), transparent 55%),
+    radial-gradient(circle at 0% 0%, rgba(var(--accent), 0.06), transparent 40%);
+}
+
+/* circuit-style dot grid, fading in toward the bottom corner */
+.skill-card-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(rgba(var(--accent), 0.35) 1px, transparent 1.4px),
+    linear-gradient(rgba(var(--accent), 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--accent), 0.08) 1px, transparent 1px);
+  background-size: 18px 18px, 36px 36px, 36px 36px;
+  -webkit-mask-image: radial-gradient(circle at 100% 100%, #000 0%, transparent 70%);
+  mask-image: radial-gradient(circle at 100% 100%, #000 0%, transparent 70%);
+  opacity: 0.7;
+}
+
+.skill-watermark {
+  position: absolute;
+  display: block;
+  line-height: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.skill-watermark svg {
+  display: block;
+  filter: drop-shadow(0 0 24px rgba(var(--accent), 0.35));
+}
+
+.skill-watermark.main {
+  right: -28px;
+  bottom: -30px;
+  opacity: 0.16;
+  transform: rotate(-14deg);
+}
+
+.skill-watermark.sub {
+  right: 128px;
+  bottom: 26px;
+  opacity: 0.12;
+  transform: rotate(10deg);
+}
+
+.skill-card:hover .skill-watermark.main {
+  opacity: 0.3;
+  transform: rotate(-6deg) scale(1.06);
+}
+
+.skill-card:hover .skill-watermark.sub {
+  opacity: 0.22;
+  transform: rotate(0deg) translateY(-6px);
+}
+
+.skill-card:hover {
+  border-color: rgba(var(--accent), 0.45);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35), 0 0 32px -8px rgba(var(--accent), 0.35);
+}
+
+.skill-card .skill-icon {
+  color: rgb(var(--accent));
+  border-color: rgba(var(--accent), 0.3);
+  background: rgba(var(--accent), 0.08);
+}
+
+@media (max-width: 768px) {
+  .skill-card {
+    min-height: 260px;
+  }
+
+  .skill-watermark.main svg {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-watermark {
+    transition: none;
+  }
+}

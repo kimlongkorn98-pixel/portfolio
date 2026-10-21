@@ -760,10 +760,10 @@ export default function App() {
   }
 
   const skillGroups = [
-    { title: 'Mobile & Frontend', icon: 'smartphone', items: t.skills.groups['Mobile & Frontend'] },
-    { title: 'Backend & APIs', icon: 'code', items: t.skills.groups['Backend & APIs'] },
-    { title: 'Database & Servers', icon: 'server', items: t.skills.groups['Database & Servers'] },
-    { title: 'Tools & Workflow', icon: 'terminal', items: t.skills.groups['Tools & Workflow'] }
+    { title: 'Mobile & Frontend', icon: 'smartphone', items: t.skills.groups['Mobile & Frontend'], logos: ['Flutter', 'React'], accent: '41, 182, 246' },
+    { title: 'Backend & APIs', icon: 'code', items: t.skills.groups['Backend & APIs'], logos: ['Python', 'Flask'], accent: '255, 212, 59' },
+    { title: 'Database & Servers', icon: 'server', items: t.skills.groups['Database & Servers'], logos: ['PostgreSQL', 'IIS Server'], accent: '96, 165, 250' },
+    { title: 'Tools & Workflow', icon: 'terminal', items: t.skills.groups['Tools & Workflow'], logos: ['Git', 'VS Code'], accent: '240, 80, 50' }
   ]
 
   return (
@@ -955,7 +955,11 @@ export default function App() {
           />
           <div className="skill-grid">
             {skillGroups.map((group, index) => (
-              <article className="skill-card reveal" key={group.title}>
+              <article className="skill-card reveal" key={group.title} style={{ '--accent': group.accent }}>
+                <div className="skill-card-bg" aria-hidden="true">
+                  <span className="skill-watermark main"><TechLogo name={group.logos[0]} size={170} /></span>
+                  <span className="skill-watermark sub"><TechLogo name={group.logos[1]} size={70} /></span>
+                </div>
                 <div className="skill-header">
                   <div className="skill-icon">
                     <Icon name={group.icon} size={22} />
